@@ -3,4 +3,6 @@
 _capturas
 bin
 obj
-*.csproj.user
+packages
+*.user
+.claude/
