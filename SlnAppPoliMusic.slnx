@@ -2,4 +2,10 @@
   <Folder Name="/WebAppPoliMusicV2_ASPX_F2.0/">
     <Project Path="WebAppPoliMusicV2/WebAppPoliMusicV2.csproj" />
   </Folder>
+  <Folder Name="/WebAppPoliMusicV3_ASPX_F4.8_NLAYER/">
+    <Project Path="WebAppPoliMusicV3_ASPX_F4.8_NLAYER/BLL.PoliMusicV3/BLL.PoliMusicV3.csproj" />
+    <Project Path="WebAppPoliMusicV3_ASPX_F4.8_NLAYER/DAL.PoliMusicV3/DAL.PoliMusicV3.csproj" />
+    <Project Path="WebAppPoliMusicV3_ASPX_F4.8_NLAYER/EntityLayer.PoliMusicV3/EntityLayer.PoliMusicV3.csproj" />
+    <Project Path="WebAppPoliMusicV3_ASPX_F4.8_NLAYER/WebAppPoliMusicV3/WebAppPoliMusicV3.csproj" />
+  </Folder>
 </Solution>
