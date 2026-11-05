@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPN FIS · Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary:  '#1A73E8',
+            surface:  '#F1F5F9',
+            ink:      '#0F172A',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body class="bg-surface dark:bg-ink text-ink dark:text-surface transition-colors duration-300">
+
+  <!-- Login -->
+  <div id="loginScreen" class="fixed inset-0 flex items-center justify-center bg-surface dark:bg-ink z-50">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 w-full max-w-sm mx-4">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary mb-3 text-white text-2xl font-bold">💬</div>
+        <h1 class="text-xl font-bold">EPN FIS Chat</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Ingresa tu nombre para unirte</p>
+      </div>
+      <form id="loginForm" class="space-y-4">
+        <input id="nameInput" type="text" maxlength="20" autocomplete="off" required
+          class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-ink dark:text-surface placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary"
+          placeholder="Tu nombre">
+        <button type="submit"
+          class="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:brightness-110 active:scale-[.98] transition">
+          Entrar al chat
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div id="chatScreen" class="hidden h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="flex items-center gap-3 px-4 py-3 bg-primary text-white shadow-md shrink-0">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">💬</span>
+        <div>
+          <h1 class="font-semibold leading-tight">EPN FIS Chat</h1>
+          <p class="text-xs text-white/70 leading-tight">
+            <span id="connDot" class="inline-block w-2 h-2 rounded-full bg-green-300 mr-1"></span>
+            <span id="connText">Conectando…</span>
+          </p>
+        </div>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <div class="flex items-center gap-1 text-sm bg-white/15 rounded-full px-3 py-1">
+          <span>👥</span>
+          <span id="userCount">0</span>
+        </div>
+        <button id="themeBtn" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition" title="Cambiar tema">🌙</button>
+      </div>
+    </header>
+
+    <!-- Messages -->
+    <main id="messages" class="flex-1 overflow-y-auto px-4 py-4 space-y-1"></main>
+
+    <!-- Typing indicator -->
+    <div id="typingBar" class="hidden px-4 py-1 text-sm text-slate-500 dark:text-slate-400 italic shrink-0"></div>
+
+    <!-- Input -->
+    <footer class="shrink-0 px-4 py-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+      <form id="msgForm" class="flex items-center gap-2 max-w-4xl mx-auto">
+        <input id="msgInput" type="text" maxlength="500" autocomplete="off"
+          class="flex-1 px-4 py-3 rounded-full border border-slate-300 dark:border-slate-600 bg-surface dark:bg-slate-700 text-ink dark:text-surface placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary"
+          placeholder="Escribe un mensaje…">
+        <span id="charCount" class="hidden sm:inline text-xs text-slate-400 w-12 text-right">0/500</span>
+        <button type="submit"
+          class="w-12 h-12 rounded-full bg-primary text-white font-semibold flex items-center justify-center hover:brightness-110 active:scale-95 transition shrink-0">
+          ➤
+        </button>
+      </form>
+    </footer>
+  </div>
+
+</body>
+</html>
